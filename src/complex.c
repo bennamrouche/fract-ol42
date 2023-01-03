@@ -6,12 +6,13 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 15:13:11 by ebennamr          #+#    #+#             */
-/*   Updated: 2022/12/31 17:05:13 by ebennamr         ###   ########.fr       */
+/*   Updated: 2023/01/01 21:15:12 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib.h"
-# include <stdio.h>
+#include <stdio.h>
+
 double	getmodduls(t_complex z)
 {
 	double	mod;
@@ -20,9 +21,9 @@ double	getmodduls(t_complex z)
 	return (mod);
 }
 
-t_complex	getpower2(t_complex z,int abs)
+t_complex	getpower2(t_complex z, int abs)
 {
-	t_complex z2;
+	t_complex	z2;
 
 	z2.x = (z.x * z.x) - (z.y * z.y);
 	if (abs == 0)
@@ -35,6 +36,7 @@ t_complex	getpower2(t_complex z,int abs)
 t_complex	newcomplex(double x, double y)
 {
 	t_complex	com;
+
 	com.x = x;
 	com.y = y;
 	return (com);
@@ -45,12 +47,13 @@ t_complex	getsum(t_complex z1, t_complex z2)
 	return (newcomplex(z1.x + z2.x, z1.y + z2.y));
 }
 
-int getiteration(t_complex zn, t_complex c, int abs)
+int	getiteration(t_complex zn, t_complex c, int abs)
 {
 	t_complex	tmp;
 	int			order;
 	double		mod;
-	tmp = getsum(zn,c);
+
+	tmp = getsum(zn, c);
 	mod = getmodduls(tmp);
 	order = 0;
 	while (mod > 0 && mod <= 2 && order < MAX_ITRA)

@@ -6,7 +6,7 @@
 #    By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/20 18:44:39 by ebennamr          #+#    #+#              #
-#    Updated: 2022/12/31 17:11:12 by ebennamr         ###   ########.fr        #
+#    Updated: 2023/01/01 21:16:25 by ebennamr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CC = cc
 NAME = fractol
 FLAG = -Wall -Wextra -Werror
 FRAMEWORK = -lmlx -framework OpenGL -framework AppKit
-SRC:= fractol.c complex.c error.c  key.c mouse.c string.c graphic.c
+SRC:= fractol.c complex.c key.c mouse.c string.c graphic.c
 
 INCLIDE =  const.h lib.h
 OBJ= $(SRC:.c=.o)
@@ -50,7 +50,7 @@ bouns:print $(OBJ)
 
 clean:
 	@echo "$(RED) $(REMOVE) Rmove Oject Files $(RESET)"
-	@rm -rf $(OBJ) 
+	@rm -rf $(OBJ)
 
 
 fclean: clean

@@ -49,7 +49,7 @@ static int	jluiacheck(int ac, char **av, t_data *data)
 	if (x > WIN_W || y > WIN_H)
 		ft_error(ER_JULIA_INV);
 	data->c.x = map(x, WIN_W, -2, 2);
-	data->c.y = -map(y, WIN_H, -2, 2);
+	data->c.y = map(y, WIN_H, -2, 2);
 	return (1);
 }
 

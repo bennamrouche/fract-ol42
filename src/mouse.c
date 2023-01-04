@@ -43,7 +43,7 @@ int	mouse_move(int x, int y, struct s_data *data)
 	if (data->type == 2 && data->ismouse_enbale == 1)
 	{
 		data->c.x = map(x, WIN_W, data->startx, data->endx);
-		data->c.y = -map(y, WIN_H, data->starty, data->endy);
+		data->c.y = map(y, WIN_H, data->starty, data->endy);
 		render(data);
 	}
 	return (0);
@@ -56,7 +56,7 @@ int	mouse_scroll(int btn, int x, int y, void *ptr)
 
 	data = (t_data *)(ptr);
 	comp.x = map(x, WIN_W, data->startx, data->endx);
-	comp.y = -map(y, WIN_H, data->starty, data->endy);
+	comp.y = map(y, WIN_H, data->starty, data->endy);
 	if (btn == MOUSE_SCROLL_UP)
 		zoom_out(data, comp);
 	else if (btn == MOUSE_SCROLL_DOWN)

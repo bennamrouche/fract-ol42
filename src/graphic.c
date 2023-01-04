@@ -54,7 +54,7 @@ static void	fill_image(t_data *data, t_img *img)
 		while (y < WIN_H)
 		{
 			data->z.x = map(x, WIN_W, data->startx, data->endx);
-			data->z.y = -map(y, WIN_H, data->starty, data->endy);
+			data->z.y = map(y, WIN_H, data->starty, data->endy);
 			if (data->type == 1)
 				itra = getiteration(newcomplex(0, 0), data->z, 0);
 			else if (data->type == 2)
